@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_meu_quiz"
+    app:startDestination="@id/fragmentoQuizNovoJogo">
+
+    <fragment
+        android:id="@+id/fragmentoQuizNovoJogo"
+        android:name="com.example.meuquiz.FragmentoQuizNovoJogo"
+        android:label="FragmentoQuizNovoJogo"
+        tools:layout="@layout/fragmento_quiz_novo_jogo">
+        <action
+            android:id="@+id/action_fragmentoQuizNovoJogo_to_fragmentoQuizPergunta"
+            app:destination="@id/fragmentoQuizPergunta" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoQuizPergunta"
+        android:name="com.example.meuquiz.FragmentoQuizPergunta"
+        android:label="FragmentoQuizPergunta"
+        tools:layout="@layout/fragmento_quiz_pergunta">
+        <action
+            android:id="@+id/action_fragmentoQuizPergunta_to_fragmentoQuizAcertou"
+            app:destination="@id/fragmentoQuizAcertou"
+            app:popUpTo="@id/fragmentoQuizNovoJogo" />
+        <action
+            android:id="@+id/action_fragmentoQuizPergunta_to_fragmentoQuizErrou"
+            app:destination="@id/fragmentoQuizErrou"
+            app:popUpTo="@id/fragmentoQuizNovoJogo" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoQuizAcertou"
+        android:name="com.example.meuquiz.FragmentoQuizAcertou"
+        android:label="FragmentoQuizAcertou"
+        tools:layout="@layout/fragmento_quiz_acertou"/>
+    <fragment
+        android:id="@+id/fragmentoQuizErrou"
+        android:name="com.example.meuquiz.FragmentoQuizErrou"
+        android:label="FragmentoQuizErrou"
+        tools:layout="@layout/fragmento_quiz_errou"/>
+</navigation>

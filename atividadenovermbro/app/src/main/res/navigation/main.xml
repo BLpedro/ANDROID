@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentoInicio">
+
+
+    <fragment
+        android:id="@+id/fragmentQualPalavra"
+        android:name="com.example.atividadenovermbro.FragmentQualPalavra"
+        android:label="FragmentQualPalavra"
+        tools:layout="@layout/fragmento_qual_palavra">
+        <action
+            android:id="@+id/action_fragmentQualPalavra_to_fragmentoFimDeJogo"
+            app:destination="@id/fragmentoFimDeJogo"
+            app:popUpTo="@id/fragmentoInicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoInicio"
+        android:name="com.example.atividadenovermbro.FragmentoInicio"
+        android:label="FragmentoInicio"
+        tools:layout="@layout/fragmento_inicio">
+        <action
+            android:id="@+id/action_fragmentoInicio_to_fragmentQualPalavra"
+            app:destination="@id/fragmentQualPalavra" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoFimDeJogo"
+        android:name="com.example.atividadenovermbro.FragmentoFimDeJogo"
+        android:label="FragmentoFimDeJogo"
+        tools:layout="@layout/fragmento_fim"/>
+</navigation>

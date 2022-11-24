@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_fluxo_app"
+    app:startDestination="@id/fragmentoTransacoes">
+
+    <fragment
+        android:id="@+id/fragmentoCategoriaTransacao"
+        android:name="com.example.minhasfinancas.FragmentoCategoriaTransacao"
+        android:label="FragmentoCategoriaTransacao">
+        <action
+            android:id="@+id/action_fragmentoCategoriaTransacao_to_fragmentoConfirmaTransacao"
+            app:destination="@id/fragmentoConfirmaTransacao"
+            app:popUpTo="@id/fragmentoTransacoes" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoTransacoes"
+        android:name="com.example.minhasfinancas.FragmentoTransacoes"
+        android:label="FragmentoTransacoes">
+        <action
+            android:id="@+id/action_fragmentoTransacoes_to_fragmentoValorTransacao"
+            app:destination="@id/fragmentoValorTransacao" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoValorTransacao"
+        android:name="com.example.minhasfinancas.FragmentoValorTransacao"
+        android:label="FragmentoValorTransacao">
+        <action
+            android:id="@+id/action_fragmentoValorTransacao_to_fragmentoCategoriaTransacao"
+            app:destination="@id/fragmentoCategoriaTransacao" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentoConfirmaTransacao"
+        android:name="com.example.minhasfinancas.FragmentoConfirmaTransacao"
+        android:label="FragmentoConfirmaTransacao" />
+</navigation>
